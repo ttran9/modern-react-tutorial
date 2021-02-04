@@ -13,3 +13,6 @@
 
     - Video 8:
         - useState hook allows component to be reactive and will trigger a re-rendering of the component.
+
+    - Video 9:
+        - likely no code changes because this video just discusses React Developer Tools.
