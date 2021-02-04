@@ -61,3 +61,6 @@
                 - /blogs/{id}
                 - /blogs (POST method)
                 - /blogs/{id} (DELETE method)
+
+    - Video 17:
+        - We get an error related to trying to use the map function on a null "blogs" object inside of the BlogList because the fetch function takes a little bit of time to query our database.
