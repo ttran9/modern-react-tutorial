@@ -27,4 +27,7 @@
                 2. We can use props in which we pass the data from the Home component into the BlogList component.
                     a. This will make the BlogList component more re-usable.
                     b. Passing the data into the BlogList component will allow for us to still use the "blogs" data inside the Home component if needed.
-            -
+
+    - Video 13:
+        - When creating the handleDelete function do not define it inside of the BlogList component because we don't want to edit the blogs prop but rather we want to use the setBlogs function.
+            - Doing the above will essentially allow us to interact with the data (blogs) directly.
