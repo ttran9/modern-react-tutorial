@@ -6,6 +6,7 @@ const Home = () => {
 
     const [blogs, setBlogs] = useState(null);
     const [isPending, setIsPending] = useState(true);
+    const [error, setError] = useState(null);
 
     /*
      * this function below is run on the initial render and every time there is 
@@ -17,20 +18,29 @@ const Home = () => {
     useEffect(() => {
         setTimeout(() => {
             fetch('http://localhost:3000/blogs')
-        // get the response object and use the json function to get the response
-        .then(res => {
-            return res.json();
-        })
-        // grab from the data object.
-        .then((data) => {
-            setBlogs(data);
-            setIsPending(false);
-        });
+                // get the response object and use the json function to get the response
+                .then(res => {
+                    if(!res.ok) {
+                        throw Error('could not fetch the data for that resource');
+                    }
+                    return res.json();
+                })
+                // grab from the data object.
+                .then((data) => {
+                    setBlogs(data);
+                    setIsPending(false);
+                    setError(null);
+                })
+                .catch((err) => {
+                    setError(err.message);
+                    setIsPending(false);
+                })
         }, 1000)
     }, []);
 
     return ( 
         <div className="home">
+            {error && <div>{error}</div>}
             {isPending && <div>Loading... </div>}
             {blogs && <BlogList blogs={blogs} title="All Blogs!"/>}
         </div>
