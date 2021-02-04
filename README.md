@@ -31,3 +31,13 @@
     - Video 13:
         - When creating the handleDelete function do not define it inside of the BlogList component because we don't want to edit the blogs prop but rather we want to use the setBlogs function.
             - Doing the above will essentially allow us to interact with the data (blogs) directly.
+
+    - Video 14:
+        - useEffect: this hook runs a function every render of the component.
+            - The component renders initially when it first loads and renders the contents inside of the return function.
+            - The component also renders when the state changes.
+                - The component is re-rendering to update the state in the browser.
+            - useEffect is a way to run code on every render.
+        - fetching data and communicating with some kind authentication service are both known as "side effects" in React.
+        - note that when we delete a blog we notice that the "use effect ran" message is logged out to the console as well as when we initially load our page.
+        - one thing to be cautious of is to not modify the state while we are in useEffect because this can potentially put the app into a loop.
