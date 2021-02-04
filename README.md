@@ -10,3 +10,6 @@
     - Video 7:
         - When we wrap the handleClickAgain function inside of an anonymous function it will not be called right away.
         - When we reference a function we automatically get the event object.
+
+    - Video 8:
+        - useState hook allows component to be reactive and will trigger a re-rendering of the component.
