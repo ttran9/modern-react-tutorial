@@ -6,12 +6,6 @@ const Home = () => {
 
     const [blogs, setBlogs] = useState(null);
 
-    const handleDelete = (id) => {
-        // the returned blogs returns a new filtered array. 
-        const newBlogs = blogs.filter((blog) => blog.id !== id);
-        setBlogs(newBlogs);
-    }
-
     /*
      * this function below is run on the initial render and every time there is 
      a re-rendering (such as when the data is changed).
@@ -34,7 +28,7 @@ const Home = () => {
 
     return ( 
         <div className="home">
-            {blogs && <BlogList blogs={blogs} title="All Blogs!" handleDelete={handleDelete}/>}
+            {blogs && <BlogList blogs={blogs} title="All Blogs!"/>}
         </div>
     );
         

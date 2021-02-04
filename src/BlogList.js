@@ -4,7 +4,7 @@ import React from "react";
 //     const blogs = props.blogs;
 //     const title = props.title;
 // above is referencing the props and below demonstrates destructing.
-const BlogList = ({blogs, title, handleDelete}) => {
+const BlogList = ({blogs, title}) => {
     // const { blogs, title } = props;
     return (
         <div className="blog-list">
@@ -14,7 +14,6 @@ const BlogList = ({blogs, title, handleDelete}) => {
                     <div className="blog-preview" key={blog.id}>
                         <h2>{ blog.title } </h2>
                         <p>Written by { blog.author }</p>
-                        <button onClick={() => handleDelete(blog.id)}>delete blog</button>
                     </div>
                 ))
             }
