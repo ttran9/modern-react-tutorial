@@ -47,5 +47,17 @@
             - There is an empty array argument which makes it so the useEffect is only ran once (during the initial render).
             - We can add dependencies to the array (2nd argument) such as any state values that should trigger the useEffect to run when these state values are changed.
             - A dependency can be a state variable which can just be added into the array.
-        
-    
+
+    - Video 16:
+        - When we use JSON Server each "top level property,"  is considered a resource.
+            - Our "blogs" (from data/db.json) is an endpoint in which we can perform CRUD operations on it.
+        - I deviated a little bit from how the video shows to install json-server
+            - I just referred to [this link](https://www.npmjs.com/package/json-server)
+                - I also just read a little bit under the "getting started" section.
+            - I just installed json-server as a dev dependency.
+                - I also referenced [this guide](https://spin.atomicobject.com/2018/10/08/mock-api-json-server/) for customizing a basic API server.
+            - We'll be using the below endpoints.
+                - /blogs (GET)
+                - /blogs/{id}
+                - /blogs (POST method)
+                - /blogs/{id} (DELETE method)
