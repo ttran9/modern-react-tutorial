@@ -41,3 +41,11 @@
         - fetching data and communicating with some kind authentication service are both known as "side effects" in React.
         - note that when we delete a blog we notice that the "use effect ran" message is logged out to the console as well as when we initially load our page.
         - one thing to be cautious of is to not modify the state while we are in useEffect because this can potentially put the app into a loop.
+
+    - Video 15:
+        - We may not want to run a function every after single render. There may be some renders where we to run the useEffect hook.
+            - There is an empty array argument which makes it so the useEffect is only ran once (during the initial render).
+            - We can add dependencies to the array (2nd argument) such as any state values that should trigger the useEffect to run when these state values are changed.
+            - A dependency can be a state variable which can just be added into the array.
+        
+    
