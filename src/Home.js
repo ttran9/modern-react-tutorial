@@ -5,6 +5,7 @@ import BlogList from "./BlogList";
 const Home = () => {
 
     const [blogs, setBlogs] = useState(null);
+    const [isPending, setIsPending] = useState(true);
 
     /*
      * this function below is run on the initial render and every time there is 
@@ -14,7 +15,8 @@ const Home = () => {
      * then the name becomes a dependency we add into the second argument.
      */
     useEffect(() => {
-        fetch('http://localhost:3000/blogs')
+        setTimeout(() => {
+            fetch('http://localhost:3000/blogs')
         // get the response object and use the json function to get the response
         .then(res => {
             return res.json();
@@ -22,12 +24,14 @@ const Home = () => {
         // grab from the data object.
         .then((data) => {
             setBlogs(data);
-        })
+            setIsPending(false);
+        });
+        }, 1000)
     }, []);
-
 
     return ( 
         <div className="home">
+            {isPending && <div>Loading... </div>}
             {blogs && <BlogList blogs={blogs} title="All Blogs!"/>}
         </div>
     );
