@@ -64,3 +64,9 @@
 
     - Video 17:
         - We get an error related to trying to use the map function on a null "blogs" object inside of the BlogList because the fetch function takes a little bit of time to query our database.
+
+    - Video 20:
+        - This video focuses on the issue of needing to write the error handling logic again.
+            - The way we have it going into the video is that we are violating DRY and requiring that we just copy paste code.
+        - This video focuses on us pulling the code out of the file and putting it into its own file.
+            - This is called creating a custom hook with a specific ability (fetching data in our case).
