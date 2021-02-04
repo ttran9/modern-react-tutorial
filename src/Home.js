@@ -9,6 +9,12 @@ const Home = () => {
         { title: 'Welcome party!', body: 'lorem ipsum...', author: 'yoshi', id: 2 },
         { title: 'Web dev top tips', body: 'lorem ipsum...', author: 'mario', id: 3 }
       ]);
+
+    const handleDelete = (id) => {
+        // the returned blogs returns a new filtered array. 
+        const newBlogs = blogs.filter((blog) => blog.id !== id);
+        setBlogs(newBlogs);
+    }
     // let name = 'mario';
     // second is function to be able to change the name
     // const [name, setName] = useState('mario');
@@ -27,8 +33,8 @@ const Home = () => {
 
     return ( 
         <div className="home">
-            <BlogList blogs={blogs} title="All Blogs!"/>
-            <BlogList blogs={blogs.filter((blog) => blog.author === 'mario')} title="Mario's blogs"/>
+            <BlogList blogs={blogs} title="All Blogs!" handleDelete={handleDelete}/>
+            {/* <BlogList blogs={blogs.filter((blog) => blog.author === 'mario')} title="Mario's blogs"/> */}
             {/* <h1>Home Page</h1> */}
             {/* <p>{name } is { age } years old</p> */}
             {/* <button onClick={handleClick}>click me</button> */}
