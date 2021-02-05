@@ -4,6 +4,7 @@
 
     - I will be following this [a react tutorial](https://www.youtube.com/playlist?list=PL4cUxeGkcC9gZD-Tvwfod2gaISzfRiP9d).
     - I am starting this repository up to the end of the third video.
+    - Master now has all the changes up to the end of this tutorial.
 
 # Video Note(s) (if applicable):
 
@@ -73,3 +74,5 @@
 
     - Video 22: 
         - One additional link to help me resolve my react router and json-server routing issue can be seen [here](https://github.com/typicode/json-server/issues/253).
+
+
