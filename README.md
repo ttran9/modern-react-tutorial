@@ -70,3 +70,6 @@
             - The way we have it going into the video is that we are violating DRY and requiring that we just copy paste code.
         - This video focuses on us pulling the code out of the file and putting it into its own file.
             - This is called creating a custom hook with a specific ability (fetching data in our case).
+
+    - Video 22: 
+        - One additional link to help me resolve my react router and json-server routing issue can be seen [here](https://github.com/typicode/json-server/issues/253).
