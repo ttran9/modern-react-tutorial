@@ -4,7 +4,7 @@ import useFetch from "./useFetch";
 
 const Home = () => {
 
-    const url = 'http://localhost:3000/blogs';
+    const url = 'http://localhost:3000/api/blogs';
     // we are grabbing the data but call it "blogs" in our current context.
     const { data:blogs, isPending, error } = useFetch(url);
 
