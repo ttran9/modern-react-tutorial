@@ -13,7 +13,8 @@ const frontend = path.join(__dirname, "dist/");
 app.use("/", express.static(frontend));
 
 app.use(middlewares);
-app.use(router);
+app.use('/api', router);
+app.use(server);
 
 // all the unknown requests are redirected to the react SPA
 app.use(function(req, res, next) {
