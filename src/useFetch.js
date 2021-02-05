@@ -13,8 +13,10 @@ const useFetch = (url) => {
      * re-render the component.
      */
     useEffect(() => {
+        const abortCont = new AbortController();
+
         setTimeout(() => {
-            fetch(url)
+            fetch(url, { signal: abortCont.signal })
                 // get the response object and use the json function to get the response
                 .then(res => {
                     if(!res.ok) {
@@ -30,10 +32,16 @@ const useFetch = (url) => {
                     setError(null);
                 })
                 .catch((err) => {
-                    setError(err.message);
-                    setIsPending(false);
+                    if(err.name === 'AbortError') {
+                        console.log('fetch aborted');                    
+                    } else {
+                        setError(err.message);
+                        setIsPending(false);  
+                    }
                 })
-        }, 1000)
+        }, 1000);
+
+        return () => abortCont.abort();
     }, [url]);
 
     /*
